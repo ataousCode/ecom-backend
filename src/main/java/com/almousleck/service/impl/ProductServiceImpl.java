@@ -1,4 +1,4 @@
-package com.almousleck.service.product;
+package com.almousleck.service.impl;
 
 import com.almousleck.exceptions.ProductNotFoundException;
 import com.almousleck.model.Category;
@@ -7,7 +7,7 @@ import com.almousleck.repository.CategoryRepository;
 import com.almousleck.repository.ProductRepository;
 import com.almousleck.request.AddProductRequest;
 import com.almousleck.request.ProductUpdateRequest;
-import lombok.AllArgsConstructor;
+import com.almousleck.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.almousleck.service.product;
+package com.almousleck.service;
 
 import com.almousleck.model.Product;
 import com.almousleck.request.AddProductRequest;

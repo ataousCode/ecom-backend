@@ -1,11 +1,12 @@
-package com.almousleck.service.image;
+package com.almousleck.service.impl;
 
 import com.almousleck.dto.ImageDto;
 import com.almousleck.exceptions.ResourceNotFound;
 import com.almousleck.model.Image;
 import com.almousleck.model.Product;
 import com.almousleck.repository.ImageRepository;
-import com.almousleck.service.product.ProductService;
+import com.almousleck.service.ImageService;
+import com.almousleck.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -36,10 +37,10 @@ public class ImageServiceImpl implements ImageService {
     }
 
     @Override
-    public Image saveImage(List<MultipartFile> files, Long productId) {
+    public List<ImageDto> saveImage(List<MultipartFile> files, Long productId) {
         Product product = productService.getProductById(productId);
 
-        List<ImageDto> saveImageDtos = new ArrayList<>();
+        List<ImageDto> saveImageDto = new ArrayList<>();
         for (MultipartFile file : files) {
             try {
                 Image image = new Image();
@@ -60,13 +61,13 @@ public class ImageServiceImpl implements ImageService {
                 imageDto.setImageId(savedImage.getId());
                 imageDto.setImageName(savedImage.getFileName());
                 imageDto.setDownloadUrl(savedImage.getDownloadUrl());
-                saveImageDtos.add(imageDto);
+                saveImageDto.add(imageDto);
 
             } catch (IOException | SQLException ex) {
                 throw new RuntimeException(ex.getMessage());
             }
         }
-        return null;
+        return saveImageDto;
     }
 
     @Override

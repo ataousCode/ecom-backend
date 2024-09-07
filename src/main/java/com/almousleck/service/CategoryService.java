@@ -1,4 +1,4 @@
-package com.almousleck.service.category;
+package com.almousleck.service;
 
 import com.almousleck.model.Category;
 
