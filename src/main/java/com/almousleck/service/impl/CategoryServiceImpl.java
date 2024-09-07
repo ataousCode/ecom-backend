@@ -37,10 +37,9 @@ public class CategoryServiceImpl implements CategoryService {
         return Optional.ofNullable(category)
                 .filter(cat -> !categoryRepository.existsByName(cat.getName()))
                 .map(categoryRepository::save)
-                .orElseThrow(() -> {
-                    return new ResourceExistException("The given category name %s already exist"
-                            .formatted(category.getName()));
-                });
+                .orElseThrow(() ->
+                     new ResourceExistException("The given category name [%s] already exist"
+                            .formatted(category.getName())));
     }
 
     @Override
