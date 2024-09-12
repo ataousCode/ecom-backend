@@ -1,5 +1,6 @@
 package com.almousleck.service;
 
+import com.almousleck.dto.ProductDto;
 import com.almousleck.model.Product;
 import com.almousleck.request.AddProductRequest;
 import com.almousleck.request.ProductUpdateRequest;
@@ -18,4 +19,7 @@ public interface ProductService {
     List<Product> getProductsByName(String name);
     List<Product> getProductsByBrandAndName(String brand, String name);
     Long countProductsByBrandAndName(String brand, String name);
+
+    List<ProductDto> getConvertedProducts(List<Product> products);
+    ProductDto convertProductToProductDto(Product product);
 }

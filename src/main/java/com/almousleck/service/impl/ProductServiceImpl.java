@@ -1,14 +1,19 @@
 package com.almousleck.service.impl;
 
+import com.almousleck.dto.ImageDto;
+import com.almousleck.dto.ProductDto;
 import com.almousleck.exceptions.ProductNotFoundException;
 import com.almousleck.model.Category;
+import com.almousleck.model.Image;
 import com.almousleck.model.Product;
 import com.almousleck.repository.CategoryRepository;
+import com.almousleck.repository.ImageRepository;
 import com.almousleck.repository.ProductRepository;
 import com.almousleck.request.AddProductRequest;
 import com.almousleck.request.ProductUpdateRequest;
 import com.almousleck.service.ProductService;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,6 +25,8 @@ public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
     private final CategoryRepository categoryRepository;
+    private final ModelMapper modelMapper;
+    private final ImageRepository imageRepository;
 
     @Override
     public Product addProduct(AddProductRequest request) {
@@ -94,6 +101,23 @@ public class ProductServiceImpl implements ProductService {
     public Long countProductsByBrandAndName(String brand, String name) {
         return productRepository
                 .countByBrandAndName(brand, name);
+    }
+
+    @Override
+    public List<ProductDto> getConvertedProducts(List<Product> products) {
+        return products.stream()
+                .map(this::convertProductToProductDto).toList();
+    }
+
+    @Override
+    public ProductDto convertProductToProductDto(Product product) {
+        ProductDto productDto = modelMapper.map(product, ProductDto.class);
+        List<Image> images = imageRepository.findByProductId(product.getId());
+        List<ImageDto> imageDto = images.stream()
+                .map(image -> modelMapper.map(image, ImageDto.class))
+                .toList();
+        productDto.setImages(imageDto);
+        return productDto;
     }
 
     private Product createProduct(AddProductRequest request, Category category) {

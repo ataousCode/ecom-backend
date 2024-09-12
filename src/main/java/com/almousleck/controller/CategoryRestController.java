@@ -20,7 +20,7 @@ import static org.springframework.http.HttpStatus.*;
 public class CategoryRestController {
     private final CategoryService categoryService;
 
-    @GetMapping("/all")
+    @GetMapping("")
     public ResponseEntity<ApiResponse> getCategories() {
         try {
             List<Category> categories = categoryService.getAllCategories();
