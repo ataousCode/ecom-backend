@@ -2,7 +2,7 @@ package com.almousleck.controller;
 
 import com.almousleck.dto.ProductDto;
 import com.almousleck.exceptions.ResourceNotFound;
-import com.almousleck.model.Product;
+import com.almousleck.entites.Product;
 import com.almousleck.request.AddProductRequest;
 import com.almousleck.request.ProductUpdateRequest;
 import com.almousleck.response.ApiResponse;
@@ -11,7 +11,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;

@@ -1,4 +1,4 @@
-package com.almousleck.model;
+package com.almousleck.entites;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -18,6 +18,7 @@ public class Image {
     private String fileName;
     private String fileType;
     @Lob
+    @Basic(fetch = FetchType.LAZY)
     private Blob image;
     private String downloadUrl;
 

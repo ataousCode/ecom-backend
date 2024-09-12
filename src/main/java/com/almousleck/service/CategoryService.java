@@ -1,6 +1,6 @@
 package com.almousleck.service;
 
-import com.almousleck.model.Category;
+import com.almousleck.entites.Category;
 
 import java.util.List;
 

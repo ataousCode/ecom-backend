@@ -2,8 +2,8 @@ package com.almousleck.service.impl;
 
 import com.almousleck.dto.ImageDto;
 import com.almousleck.exceptions.ResourceNotFound;
-import com.almousleck.model.Image;
-import com.almousleck.model.Product;
+import com.almousleck.entites.Image;
+import com.almousleck.entites.Product;
 import com.almousleck.repository.ImageRepository;
 import com.almousleck.service.ImageService;
 import com.almousleck.service.ProductService;

@@ -1,4 +1,4 @@
-package com.almousleck.model;
+package com.almousleck.entites;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

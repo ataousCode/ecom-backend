@@ -1,6 +1,6 @@
 package com.almousleck.dto;
 
-import com.almousleck.model.Category;
+import com.almousleck.entites.Category;
 import lombok.Data;
 
 import java.math.BigDecimal;

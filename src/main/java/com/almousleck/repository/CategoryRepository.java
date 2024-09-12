@@ -1,6 +1,6 @@
 package com.almousleck.repository;
 
-import com.almousleck.model.Category;
+import com.almousleck.entites.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

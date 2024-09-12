@@ -1,7 +1,7 @@
 package com.almousleck.service;
 
 import com.almousleck.dto.ImageDto;
-import com.almousleck.model.Image;
+import com.almousleck.entites.Image;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;

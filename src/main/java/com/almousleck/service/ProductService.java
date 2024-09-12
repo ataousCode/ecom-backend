@@ -1,7 +1,7 @@
 package com.almousleck.service;
 
 import com.almousleck.dto.ProductDto;
-import com.almousleck.model.Product;
+import com.almousleck.entites.Product;
 import com.almousleck.request.AddProductRequest;
 import com.almousleck.request.ProductUpdateRequest;
 

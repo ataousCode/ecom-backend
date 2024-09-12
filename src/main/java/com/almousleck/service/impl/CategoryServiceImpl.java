@@ -2,7 +2,7 @@ package com.almousleck.service.impl;
 
 import com.almousleck.exceptions.ResourceExistException;
 import com.almousleck.exceptions.ResourceNotFound;
-import com.almousleck.model.Category;
+import com.almousleck.entites.Category;
 import com.almousleck.repository.CategoryRepository;
 import com.almousleck.service.CategoryService;
 import lombok.RequiredArgsConstructor;

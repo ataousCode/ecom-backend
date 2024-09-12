@@ -2,11 +2,10 @@ package com.almousleck.controller;
 
 import com.almousleck.exceptions.ResourceExistException;
 import com.almousleck.exceptions.ResourceNotFound;
-import com.almousleck.model.Category;
+import com.almousleck.entites.Category;
 import com.almousleck.response.ApiResponse;
 import com.almousleck.service.CategoryService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,6 +1,6 @@
 package com.almousleck.repository;
 
-import com.almousleck.model.Image;
+import com.almousleck.entites.Image;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
