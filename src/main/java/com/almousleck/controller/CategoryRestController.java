@@ -2,7 +2,7 @@ package com.almousleck.controller;
 
 import com.almousleck.exceptions.ResourceExistException;
 import com.almousleck.exceptions.ResourceNotFound;
-import com.almousleck.entites.Category;
+import com.almousleck.domain.Category;
 import com.almousleck.response.ApiResponse;
 import com.almousleck.service.CategoryService;
 import lombok.RequiredArgsConstructor;

@@ -1,6 +1,6 @@
 package com.almousleck.controller;
 
-import com.almousleck.entites.Cart;
+import com.almousleck.domain.Cart;
 import com.almousleck.exceptions.ResourceNotFound;
 import com.almousleck.response.ApiResponse;
 import com.almousleck.service.CartService;

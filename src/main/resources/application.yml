@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: ecom-backend
+# database config
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ecom_backend
+    username: postgres
+    password: admin
+    driver-class-name: org.postgresql.Driver
+# jpa integration
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+#images and files size
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+# api end point started with
+api:
+  prefix: /api/v1

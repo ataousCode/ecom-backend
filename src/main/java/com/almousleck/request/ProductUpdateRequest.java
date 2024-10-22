@@ -1,6 +1,6 @@
 package com.almousleck.request;
 
-import com.almousleck.entites.Category;
+import com.almousleck.domain.Category;
 import lombok.Data;
 
 import java.math.BigDecimal;

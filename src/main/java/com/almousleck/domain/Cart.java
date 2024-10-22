@@ -1,4 +1,4 @@
-package com.almousleck.entites;
+package com.almousleck.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -15,12 +15,24 @@ import java.util.Set;
 @Entity
 public class Cart {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(
+            name = "cart_id_seq",
+            sequenceName = "cart_id_seq",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "cart_id_seq"
+    )
     private Long id;
     private BigDecimal totalAmount = BigDecimal.ZERO;
 
     @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<CartItem> items = new HashSet<>();
+
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     public void addItem(CartItem item) {
         this.items.add(item);

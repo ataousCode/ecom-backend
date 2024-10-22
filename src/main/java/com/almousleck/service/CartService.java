@@ -1,6 +1,6 @@
 package com.almousleck.service;
 
-import com.almousleck.entites.Cart;
+import com.almousleck.domain.Cart;
 
 import java.math.BigDecimal;
 

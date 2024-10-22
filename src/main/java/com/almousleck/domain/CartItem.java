@@ -1,4 +1,4 @@
-package com.almousleck.entites;
+package com.almousleck.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -16,7 +16,15 @@ import java.math.BigDecimal;
 @Entity
 public class CartItem {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(
+            name = "cart_item_id_seq",
+            sequenceName = "cart_item_id_seq",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "cart_item_id_seq"
+    )
     private Long id;
     private int quantity;
     private BigDecimal unitPrice;

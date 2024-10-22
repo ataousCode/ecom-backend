@@ -2,7 +2,7 @@ package com.almousleck.controller;
 
 import com.almousleck.dto.ProductDto;
 import com.almousleck.exceptions.ResourceNotFound;
-import com.almousleck.entites.Product;
+import com.almousleck.domain.Product;
 import com.almousleck.request.AddProductRequest;
 import com.almousleck.request.ProductUpdateRequest;
 import com.almousleck.response.ApiResponse;

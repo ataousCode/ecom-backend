@@ -1,4 +1,4 @@
-package com.almousleck.entites;
+package com.almousleck.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -13,7 +13,15 @@ import java.sql.Blob;
 @Entity
 public class Image {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(
+            name = "image_id_seq",
+            sequenceName = "image_id_seq",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "image_id_seq"
+    )
     private Long id;
     private String fileName;
     private String fileType;

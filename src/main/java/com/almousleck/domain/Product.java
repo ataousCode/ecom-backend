@@ -1,4 +1,4 @@
-package com.almousleck.entites;
+package com.almousleck.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,7 +14,15 @@ import java.util.List;
 @Entity
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(
+            name = "product_id_seq",
+            sequenceName = "product_id_seq",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "product_id_seq"
+    )
     private Long id;
     private String name;
     private String brand;

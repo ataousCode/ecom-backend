@@ -1,6 +1,6 @@
 package com.almousleck.repository;
 
-import com.almousleck.entites.CartItem;
+import com.almousleck.domain.CartItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

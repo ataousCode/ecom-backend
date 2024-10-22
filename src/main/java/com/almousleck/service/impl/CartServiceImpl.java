@@ -1,6 +1,6 @@
 package com.almousleck.service.impl;
 
-import com.almousleck.entites.Cart;
+import com.almousleck.domain.Cart;
 import com.almousleck.exceptions.ResourceNotFound;
 import com.almousleck.repository.CartItemRepository;
 import com.almousleck.repository.CartRepository;

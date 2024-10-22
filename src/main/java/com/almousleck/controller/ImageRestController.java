@@ -2,7 +2,7 @@ package com.almousleck.controller;
 
 import com.almousleck.dto.ImageDto;
 import com.almousleck.exceptions.ResourceNotFound;
-import com.almousleck.entites.Image;
+import com.almousleck.domain.Image;
 import com.almousleck.response.ApiResponse;
 import com.almousleck.service.ImageService;
 import org.springframework.transaction.annotation.Transactional;

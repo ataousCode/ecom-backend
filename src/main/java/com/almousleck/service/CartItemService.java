@@ -1,6 +1,6 @@
 package com.almousleck.service;
 
-import com.almousleck.entites.CartItem;
+import com.almousleck.domain.CartItem;
 
 public interface CartItemService {
     void addItemToCart(Long cartId, Long productId, int quantity);
