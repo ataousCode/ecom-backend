@@ -1,4 +1,8 @@
 package com.almousleck.user;
 
-public class UserUpdateRequest {
+public record UserUpdateRequest(
+        String firstname,
+        String lastname,
+        String email
+) {
 }
